@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "source": "API local demonstrativa",
+    "territory": "Pernambuco",
+    "updatedAt": "2026-03-18",
+    "isDemo": true
+  },
+  "conflicts": [
+    {
+      "id": 1,
+      "nome": "Disputa por posse em área agrícola",
+      "municipio": "Petrolina",
+      "tipo": "Terra",
+      "status": "Ativo",
+      "data": "2026-02-14",
+      "descricao": "Famílias relatam insegurança de permanência em área produtiva com sobreposição de reivindicações fundiárias.",
+      "coordinates": [-40.503, -9.389]
+    },
+    {
+      "id": 2,
+      "nome": "Restrição de acesso à água para irrigação",
+      "municipio": "Salgueiro",
+      "tipo": "Água",
+      "status": "Em mediação",
+      "data": "2026-01-28",
+      "descricao": "Comunidades rurais apontam redução de acesso hídrico em contexto de uso compartilhado do recurso.",
+      "coordinates": [-39.12, -8.074]
+    },
+    {
+      "id": 3,
+      "nome": "Conflito em território tradicional",
+      "municipio": "Garanhuns",
+      "tipo": "Território tradicional",
+      "status": "Ativo",
+      "data": "2025-12-09",
+      "descricao": "Registro demonstrativo de tensão territorial com demanda por reconhecimento e proteção de uso tradicional da área.",
+      "coordinates": [-36.492, -8.89]
+    },
+    {
+      "id": 4,
+      "nome": "Uso de área de proteção e produção rural",
+      "municipio": "Caruaru",
+      "tipo": "Ambiental",
+      "status": "Resolvido",
+      "data": "2025-11-18",
+      "descricao": "Caso demonstrativo encerrado após mediação institucional entre atores locais e órgãos públicos.",
+      "coordinates": [-35.973, -8.284]
+    },
+    {
+      "id": 5,
+      "nome": "Acesso a estrada vicinal de escoamento",
+      "municipio": "Serra Talhada",
+      "tipo": "Infraestrutura rural",
+      "status": "Em mediação",
+      "data": "2026-02-03",
+      "descricao": "Conflito demonstrativo envolvendo bloqueio de rota de circulação para produção agrícola e mobilidade local.",
+      "coordinates": [-38.298, -7.991]
+    },
+    {
+      "id": 6,
+      "nome": "Sobreposição entre uso produtivo e área reivindicada",
+      "municipio": "Palmares",
+      "tipo": "Terra",
+      "status": "Ativo",
+      "data": "2026-01-11",
+      "descricao": "Ocorrência demonstrativa utilizada para representar concentração de registros na Mata Sul.",
+      "coordinates": [-35.589, -8.684]
+    },
+    {
+      "id": 7,
+      "nome": "Ameaça de interrupção de abastecimento comunitário",
+      "municipio": "Arcoverde",
+      "tipo": "Água",
+      "status": "Ativo",
+      "data": "2026-02-20",
+      "descricao": "Conflito demonstrativo com potencial impacto social ampliado sobre comunidades do entorno.",
+      "coordinates": [-37.056, -8.419]
+    }
+  ]
+}
