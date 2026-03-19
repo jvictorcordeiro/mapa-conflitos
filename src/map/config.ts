@@ -1,3 +1,5 @@
+export const mapBaseLayerId = "osm";
+
 export const mapStyle = {
   version: 8 as const,
   glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
@@ -15,7 +17,7 @@ export const mapStyle = {
   },
   layers: [
     {
-      id: "osm",
+      id: mapBaseLayerId,
       type: "raster" as const,
       source: "osm",
     },

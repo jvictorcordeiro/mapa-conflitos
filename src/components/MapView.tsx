@@ -3,7 +3,7 @@ import maplibregl, { type GeoJSONSource } from "maplibre-gl";
 import type { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 import type { Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { mapInitialView, mapStyle } from "../map/config";
+import { mapBaseLayerId, mapInitialView, mapStyle } from "../map/config";
 import { buildConflictsGeoJSON, fitMapToFeatureCollection } from "../map/geojson";
 import {
   addConflictLayers,
@@ -31,6 +31,7 @@ type MapViewProps = {
 };
 
 type LayerVisibilityState = {
+  base: boolean;
   relief: boolean;
   state: boolean;
   municipalities: boolean;
@@ -39,6 +40,7 @@ type LayerVisibilityState = {
 };
 
 const initialLayerVisibility: LayerVisibilityState = {
+  base: true,
   relief: false,
   state: true,
   municipalities: true,
@@ -53,7 +55,7 @@ const RELIEF_TILES = [
 const LAYER_PANEL_GROUPS = [
   {
     title: "Base",
-    items: [{ label: "Mapa-base escuro", staticValue: "Ativo" }],
+    items: [{ key: "base", label: "Mapa-base" }],
   },
   {
     title: "Limites",
@@ -276,6 +278,14 @@ function syncLayerVisibility(
   map: maplibregl.Map,
   layerVisibility: LayerVisibilityState,
 ): void {
+  if (map.getLayer(mapBaseLayerId)) {
+    map.setLayoutProperty(
+      mapBaseLayerId,
+      "visibility",
+      layerVisibility.base ? "visible" : "none",
+    );
+  }
+
   setLayerVisibility(map, MAP_LAYER_IDS.relief, layerVisibility.relief);
   setLayerVisibility(map, MAP_LAYER_IDS.stateFill, layerVisibility.state);
   setLayerVisibility(map, MAP_LAYER_IDS.stateOutline, layerVisibility.state);
@@ -793,15 +803,6 @@ export default function MapView({
                   {group.title}
                 </p>
                 {group.items.map((item) => {
-                  if ("staticValue" in item) {
-                    return (
-                      <div key={item.label} className="layer-toggle">
-                        <span>{item.label}</span>
-                        <span>{item.staticValue}</span>
-                      </div>
-                    );
-                  }
-
                   return (
                     <button
                       key={item.key}
